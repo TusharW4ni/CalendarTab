@@ -3,11 +3,11 @@
   "name": "CalendarTab",
   "version": "1.0",
   "description": "A calendar utility for your new tab.",
-  "permissions": [
-    "storage"
-  ],
+  "permissions": ["storage"],
   "chrome_url_overrides": {
     "newtab": "calendar.html"
+  },
+  "icons": {
+    "16": "./calendartab-icon.png"
   }
 }
-

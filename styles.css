@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  /* background-color: #f7f7f7; */
+  background-color: #000000; /*added new*/
+}
+
+#calendar-container {
+  text-align: center;
+}
+
+#monthYear {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #f0f0f0; /*added new*/
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 600px;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  width: 14.28%;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+td {
+  height: 50px;
+  color: #f0f0f0; /*added new*/
+}
+
+td.active {
+  background-color: #f9d3a6;
+  color: #000000; /*added new*/
+}

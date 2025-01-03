@@ -3,6 +3,11 @@
   "name": "CalendarTab",
   "version": "1.0",
   "description": "A calendar utility for your new tab.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "566354b3d6936dac0af0c9ce9177a03c1fa1904d@temporary-addon"
+    }
+  },
   "permissions": ["storage"],
   "chrome_url_overrides": {
     "newtab": "calendar.html"

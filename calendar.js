@@ -24,10 +24,48 @@ const prevMonthButton = document.getElementById("prevMonth");
 const nextMonthButton = document.getElementById("nextMonth");
 
 // Function to render calendar for a specific month and year
+// function renderCalendar(month, year) {
+//   monthYearElement.innerText = `${monthNames[month]} ${year}`;
+//   hiddenDatePicker.value = `${year}-${(month + 1).toString().padStart(2, "0")}`;
+//   calendarBodyElement.innerHTML = "";
+
+//   const firstDay = new Date(year, month, 1).getDay();
+//   const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+//   let date = 1;
+//   for (let i = 0; i < 6; i++) {
+//     const row = document.createElement("tr");
+//     for (let j = 0; j < 7; j++) {
+//       const cell = document.createElement("td");
+//       if (i === 0 && j < firstDay) {
+//         cell.innerHTML = "";
+//       } else if (date > daysInMonth) {
+//         break;
+//       } else {
+//         cell.innerHTML = date;
+//         if (
+//           date === currentDate.getDate() &&
+//           month === currentDate.getMonth() &&
+//           year === currentDate.getFullYear()
+//         ) {
+//           cell.classList.add("active");
+//         }
+//         date++;
+//       }
+//       row.appendChild(cell);
+//     }
+//     calendarBodyElement.appendChild(row);
+//   }
+// }
 function renderCalendar(month, year) {
-  monthYearElement.innerText = `${monthNames[month]} ${year}`;
+  // Update the month and year display
+  monthYearElement.textContent = `${monthNames[month]} ${year}`;
   hiddenDatePicker.value = `${year}-${(month + 1).toString().padStart(2, "0")}`;
-  calendarBodyElement.innerHTML = "";
+
+  // Clear the calendar body
+  while (calendarBodyElement.firstChild) {
+    calendarBodyElement.removeChild(calendarBodyElement.firstChild);
+  }
 
   const firstDay = new Date(year, month, 1).getDay();
   const daysInMonth = new Date(year, month + 1, 0).getDate();
@@ -38,11 +76,11 @@ function renderCalendar(month, year) {
     for (let j = 0; j < 7; j++) {
       const cell = document.createElement("td");
       if (i === 0 && j < firstDay) {
-        cell.innerHTML = "";
+        cell.textContent = ""; // Empty cell for padding
       } else if (date > daysInMonth) {
         break;
       } else {
-        cell.innerHTML = date;
+        cell.textContent = date;
         if (
           date === currentDate.getDate() &&
           month === currentDate.getMonth() &&
